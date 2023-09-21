@@ -1,0 +1,23 @@
+# See https://pre-commit.com for more information
+# See https://pre-commit.com/hooks.html for more hooks
+repos:
+-   repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v3.2.0
+    hooks:
+    -   id: trailing-whitespace
+    -   id: end-of-file-fixer
+        exclude: .pre-commit/license_header.tmpl
+    -   id: check-yaml
+    -   id: check-added-large-files
+-   repo: http://github.com/Quard/license-header-checker
+    rev: v0.2.1
+    hooks:
+      - id: license-header-checker
+        files: \.(c|h)$
+        args:
+          - --comment-style
+          - "/*| *| */"
+          - --license
+          - "\\nCopyright \\(c\\) \\d{4} Vadym Zakovinko\\n\\nSPDX-License-Identifier: MIT\\n"
+          - --auto-populate
+          - .pre-commit/license_header.tmpl
