@@ -1,0 +1,36 @@
+/*
+ * Copyright (c) 2023 Vadym Zakovinko
+ *
+ * SPDX-License-Identifier: MIT
+ */
+
+#ifndef __VEML6070_INCLUDES_VEML6070_REGS_H__
+#define __VEML6070_INCLUDES_VEML6070_REGS_H__
+
+
+#define VEML6070_ADDR_WRITE  0x38 << 1
+#define VEML6070_ADDR_LSB    0x38 << 1
+#define VEML6070_ADDR_MSB    0x39 << 1
+
+#define VEML6070_ACK_POS       5
+#define VEML6070_ACK_MASK      (0b1 << VEML6070_ACK_POS)
+#define VEML6070_ACK_THD_POS   4
+#define VEML6070_ACK_THD_MASK  (0b1 << VEML6070_ACK_THD_POS)
+#define VEML6070_IT_POS        2
+#define VEML6070_IT_MASK       (0b11 << VEML6070_IT_POS)
+#define VEML6070_SD_POS        0
+#define VEML6070_SD_MASK       (0b1 << VEML6070_SD_POS)
+
+#define VEML6070_ACK_DISABLE        (0 << VEML6070_ACK_POS)
+#define VEML6070_ACK_ENABLE         (1 << VEML6070_ACK_POS)
+#define VEML6070_ACK_THD_102_STEPS  (0 << VEML6070_ACK_THD_POS)
+#define VEML6070_ACK_THD_145_STEPS  (1 << VEML6070_ACK_THD_POS)
+#define VEML6070_IT_HALF_T          (0b00 << VEML6070_IT_POS)
+#define VEML6070_IT_1T              (0b01 << VEML6070_IT_POS)
+#define VEML6070_IT_2T              (0b10 << VEML6070_IT_POS)
+#define VEML6070_IT_4T              (0b11 << VEML6070_IT_POS)
+#define VEML6070_SD_DISABLE         (0 << VEML6070_SD_POS)
+#define VEML6070_SD_ENABLE          (0 << VEML6070_SD_POS)
+
+
+#endif /* __VEML6070_INCLUDES_VEML6070_REGS_H__ */
